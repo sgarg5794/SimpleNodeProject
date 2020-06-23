@@ -1,16 +1,16 @@
 language: node_js
 node_js:
- -13
+ - 13
 services:
- -docker
+ - docker
 install:
- -echo "nothing to install"
+ - echo "nothing to install"
 before_script:
- -echo "nothing to run before script"
+ - echo "nothing to run before script"
 script:
- -docker build . -t simple-node-image
- -docker tag simple-node-image sahilgarg5794/simple-node-image:latest
+ - docker build . -t simple-node-image
+ - docker tag simple-node-image sahilgarg5794/simple-node-image:latest
 after_success:
- -docker login --username sahilgarg5794 --password Summer@99
- -docker push sahilgarg5794/simple-node-image
+ - docker login --username sahilgarg5794 --password Summer@99
+ - docker push sahilgarg5794/simple-node-image
 
