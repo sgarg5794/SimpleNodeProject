@@ -9,8 +9,8 @@ before_script:
  - echo "nothing to run before script"
 script:
  - docker build . -t simple-node-image
- - docker tag simple-node-image sahilgarg5794/simple-node-image:latest
+ - docker tag simple-node-image $DOCKER_USERNAME/simple-node-image:latest
 after_success:
- - docker login --username sahilgarg5794 --password Summer@99
- - docker push sahilgarg5794/simple-node-image
+ - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+ - docker push $DOCKER_USERNAME/simple-node-image
 
